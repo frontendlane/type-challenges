@@ -3,6 +3,7 @@ const antfu = require('@antfu/eslint-config').default
 module.exports = antfu(
   {
     markdown: false,
+    reportUnusedDirectives: true,
   },
   {
     rules: {
