@@ -31,7 +31,7 @@
 declare function Currying(fn: any): any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 const curried1 = Currying((a: string, b: number, c: boolean) => true)
 const curried2 = Currying((a: string, b: number, c: boolean, d: boolean, e: boolean, f: string, g: boolean) => true)

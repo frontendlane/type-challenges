@@ -36,7 +36,7 @@
 type CountElementNumberToObject<T> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
 	Expect<
@@ -78,7 +78,7 @@ type cases = [
 	Expect<Equal<CountElementNumberToObject<[never]>, {}>>,
 	Expect<
 		Equal<
-			CountElementNumberToObject<["1", "2", "0"]>,
+			CountElementNumberToObject<['1', '2', '0']>,
 			{
 				0: 1
 				1: 1
@@ -88,7 +88,7 @@ type cases = [
 	>,
 	Expect<
 		Equal<
-			CountElementNumberToObject<["a", "b", ["c", ["d"]]]>,
+			CountElementNumberToObject<['a', 'b', ['c', ['d']]]>,
 			{
 				a: 1
 				b: 1

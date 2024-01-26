@@ -30,7 +30,7 @@
 type RequiredByKeys<T, K> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 interface User {
 	name?: string
@@ -51,11 +51,11 @@ interface UserRequiredNameAndAge {
 }
 
 type cases = [
-	Expect<Equal<RequiredByKeys<User, "name">, UserRequiredName>>,
-	Expect<Equal<RequiredByKeys<User, "name" | "age">, UserRequiredNameAndAge>>,
+	Expect<Equal<RequiredByKeys<User, 'name'>, UserRequiredName>>,
+	Expect<Equal<RequiredByKeys<User, 'name' | 'age'>, UserRequiredNameAndAge>>,
 	Expect<Equal<RequiredByKeys<User>, Required<User>>>,
 	// @ts-expect-error
-	Expect<Equal<RequiredByKeys<User, "name" | "unknown">, UserRequiredName>>,
+	Expect<Equal<RequiredByKeys<User, 'name' | 'unknown'>, UserRequiredName>>,
 ]
 
 /* _____________ Further Steps _____________ */

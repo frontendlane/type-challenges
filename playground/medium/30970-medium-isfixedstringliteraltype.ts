@@ -27,12 +27,12 @@
 type IsFixedStringLiteralType<S extends string> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type testcase =
-	| Expect<Equal<IsFixedStringLiteralType<"ABC">, true>>
+	| Expect<Equal<IsFixedStringLiteralType<'ABC'>, true>>
 	| Expect<Equal<IsFixedStringLiteralType<string>, false>>
-	| Expect<Equal<IsFixedStringLiteralType<"ABC" | "DEF">, false>>
+	| Expect<Equal<IsFixedStringLiteralType<'ABC' | 'DEF'>, false>>
 	| Expect<Equal<IsFixedStringLiteralType<never>, false>>
 	| Expect<Equal<IsFixedStringLiteralType<`${string}`>, false>>
 	| Expect<Equal<IsFixedStringLiteralType<`${string & {}}`>, false>>

@@ -25,7 +25,7 @@
 type MyAwaited<T> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type X = Promise<string>
 type Y = Promise<{ field: number }>

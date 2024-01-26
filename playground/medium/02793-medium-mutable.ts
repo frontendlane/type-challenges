@@ -28,7 +28,7 @@
 type Mutable<T> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 interface Todo1 {
 	title: string
@@ -45,7 +45,7 @@ type cases = [Expect<Equal<Mutable<Readonly<Todo1>>, Todo1>>, Expect<Equal<Mutab
 
 type errors = [
 	// @ts-expect-error
-	Mutable<"string">,
+	Mutable<'string'>,
 	// @ts-expect-error
 	Mutable<0>,
 ]

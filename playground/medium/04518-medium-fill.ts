@@ -19,10 +19,10 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Fill<T extends unknown[], N, Start extends number = 0, End extends number = T["length"]> = any
+type Fill<T extends unknown[], N, Start extends number = 0, End extends number = T['length']> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
 	Expect<Equal<Fill<[], 0>, []>>,

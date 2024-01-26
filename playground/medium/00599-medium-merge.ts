@@ -30,7 +30,7 @@
 type Merge<F, S> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type Foo = {
 	a: number

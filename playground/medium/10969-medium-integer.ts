@@ -15,7 +15,7 @@
 type Integer<T> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 let x = 1
 let y = 1 as const

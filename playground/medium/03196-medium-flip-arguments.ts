@@ -24,7 +24,7 @@
 type FlipArguments<T> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
 	Expect<Equal<FlipArguments<() => boolean>, () => boolean>>,
@@ -39,11 +39,11 @@ type cases = [
 
 type errors = [
 	// @ts-expect-error
-	FlipArguments<"string">,
+	FlipArguments<'string'>,
 	// @ts-expect-error
-	FlipArguments<{ key: "value" }>,
+	FlipArguments<{ key: 'value' }>,
 	// @ts-expect-error
-	FlipArguments<["apple", "banana", 100, { a: 1 }]>,
+	FlipArguments<['apple', 'banana', 100, { a: 1 }]>,
 	// @ts-expect-error
 	FlipArguments<null | undefined>,
 ]

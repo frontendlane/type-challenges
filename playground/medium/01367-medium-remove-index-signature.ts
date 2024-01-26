@@ -26,7 +26,7 @@
 type RemoveIndexSignature<T> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type Foo = {
 	[key: string]: any
@@ -39,7 +39,7 @@ type Bar = {
 	0: string
 }
 
-const foobar = Symbol("foobar")
+const foobar = Symbol('foobar')
 type FooBar = {
 	[key: symbol]: any
 	[foobar](): void

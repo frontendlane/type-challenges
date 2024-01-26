@@ -57,7 +57,7 @@
 type DeepMutable = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 interface Test1 {
 	readonly title: string
@@ -76,14 +76,14 @@ type Test2 = {
 			readonly g: {
 				readonly h: {
 					readonly i: true
-					readonly j: "s"
+					readonly j: 's'
 				}
-				readonly k: "hello"
+				readonly k: 'hello'
 			}
 			readonly l: readonly [
-				"hi",
+				'hi',
 				{
-					readonly m: readonly ["hey"]
+					readonly m: readonly ['hey']
 				},
 			]
 		}
@@ -107,14 +107,14 @@ type DeepMutableTest2 = {
 			g: {
 				h: {
 					i: true
-					j: "s"
+					j: 's'
 				}
-				k: "hello"
+				k: 'hello'
 			}
 			l: [
-				"hi",
+				'hi',
 				{
-					m: ["hey"]
+					m: ['hey']
 				},
 			]
 		}
@@ -125,7 +125,7 @@ type cases = [Expect<Equal<DeepMutable<Test1>, DeepMutableTest1>>, Expect<Equal<
 
 type errors = [
 	// @ts-expect-error
-	DeepMutable<"string">,
+	DeepMutable<'string'>,
 	// @ts-expect-error
 	DeepMutable<0>,
 ]

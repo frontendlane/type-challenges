@@ -22,7 +22,7 @@
 type Slice<Arr, Start, End> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type Arr = [1, 2, 3, 4, 5]
 

@@ -25,7 +25,7 @@
 type First<T extends any[]> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
 	Expect<Equal<First<[3, 2, 1]>, 3>>,
@@ -36,9 +36,9 @@ type cases = [
 
 type errors = [
 	// @ts-expect-error
-	First<"notArray">,
+	First<'notArray'>,
 	// @ts-expect-error
-	First<{ 0: "arrayLike" }>,
+	First<{ 0: 'arrayLike' }>,
 ]
 
 /* _____________ Further Steps _____________ */

@@ -19,6 +19,8 @@ module.exports = antfu(
       'ts/no-require-imports': 'off',
       'ts/no-unused-vars': 'off',
       'unused-imports/no-unused-vars': 'off',
+      'ts/array-type': ['error', { default: 'generic', readonly: 'generic' }], // https://tkdodo.eu/blog/array-types-in-type-script
+      'ts/no-explicit-any': 'error',
     },
   },
 )

@@ -49,7 +49,7 @@
 declare function SimpleVue(options: any): any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 SimpleVue({
 	data() {
@@ -61,8 +61,8 @@ SimpleVue({
 		this.data()
 
 		return {
-			firstname: "Type",
-			lastname: "Challenges",
+			firstname: 'Type',
+			lastname: 'Challenges',
 			amount: 10,
 		}
 	},

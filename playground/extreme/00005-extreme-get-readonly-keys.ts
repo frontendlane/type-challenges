@@ -27,9 +27,9 @@
 type GetReadonlyKeys<T> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
-type cases = [Expect<Equal<"title", GetReadonlyKeys<Todo1>>>, Expect<Equal<"title" | "description", GetReadonlyKeys<Todo2>>>]
+type cases = [Expect<Equal<'title', GetReadonlyKeys<Todo1>>>, Expect<Equal<'title' | 'description', GetReadonlyKeys<Todo2>>>]
 
 interface Todo1 {
 	readonly title: string

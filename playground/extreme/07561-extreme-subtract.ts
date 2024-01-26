@@ -27,7 +27,7 @@
 type Subtract<M extends number, S extends number> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 type cases = [
 	Expect<Equal<Subtract<1, 1>, 0>>,

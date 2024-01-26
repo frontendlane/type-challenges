@@ -80,13 +80,13 @@
 declare function defineStore(store: unknown): unknown
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
 const store = defineStore({
-	id: "",
+	id: '',
 	state: () => ({
 		num: 0,
-		str: "",
+		str: '',
 	}),
 	getters: {
 		stringifiedNum() {
@@ -135,7 +135,7 @@ store.increment(2)
 // @ts-expect-error
 store.setNum()
 // @ts-expect-error
-store.setNum("3")
+store.setNum('3')
 store.setNum(3)
 const r = store.reset()
 

@@ -34,10 +34,10 @@
 type Enum<T extends readonly string[], N extends boolean = false> = any
 
 /* _____________ Test Cases _____________ */
-import type { Equal, Expect } from "@type-challenges/utils"
+import type { Equal, Expect } from '@type-challenges/utils'
 
-const OperatingSystem = ["macOS", "Windows", "Linux"] as const
-const Command = ["echo", "grep", "sed", "awk", "cut", "uniq", "head", "tail", "xargs", "shift"] as const
+const OperatingSystem = ['macOS', 'Windows', 'Linux'] as const
+const Command = ['echo', 'grep', 'sed', 'awk', 'cut', 'uniq', 'head', 'tail', 'xargs', 'shift'] as const
 
 type cases = [
 	Expect<Equal<Enum<[]>, {}>>,
@@ -45,9 +45,9 @@ type cases = [
 		Equal<
 			Enum<typeof OperatingSystem>,
 			{
-				readonly MacOS: "macOS"
-				readonly Windows: "Windows"
-				readonly Linux: "Linux"
+				readonly MacOS: 'macOS'
+				readonly Windows: 'Windows'
+				readonly Linux: 'Linux'
 			}
 		>
 	>,
@@ -65,16 +65,16 @@ type cases = [
 		Equal<
 			Enum<typeof Command>,
 			{
-				readonly Echo: "echo"
-				readonly Grep: "grep"
-				readonly Sed: "sed"
-				readonly Awk: "awk"
-				readonly Cut: "cut"
-				readonly Uniq: "uniq"
-				readonly Head: "head"
-				readonly Tail: "tail"
-				readonly Xargs: "xargs"
-				readonly Shift: "shift"
+				readonly Echo: 'echo'
+				readonly Grep: 'grep'
+				readonly Sed: 'sed'
+				readonly Awk: 'awk'
+				readonly Cut: 'cut'
+				readonly Uniq: 'uniq'
+				readonly Head: 'head'
+				readonly Tail: 'tail'
+				readonly Xargs: 'xargs'
+				readonly Shift: 'shift'
 			}
 		>
 	>,
