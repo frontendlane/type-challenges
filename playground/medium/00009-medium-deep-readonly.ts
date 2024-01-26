@@ -36,7 +36,17 @@
 
 /* _____________ Your Code Here _____________ */
 
-type DeepReadonly<T> = any
+// solution 1
+// type DeepReadonly<T> = T extends (...args: infer A) => infer R
+// 	? (...args: A) => R
+// 	: T extends object
+// 		? { readonly [Key in keyof T]: DeepReadonly<T[Key]> }
+// 		: T
+
+// solution 2
+type DeepReadonly<T> = {
+	+readonly [Key in keyof T]: T[Key] extends object ? (T[Key] extends Function ? T[Key] : DeepReadonly<T[Key]>) : T[Key]
+}
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

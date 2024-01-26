@@ -29,7 +29,19 @@
 
 /* _____________ Your Code Here _____________ */
 
-type LookUp<U, T> = any
+type LookUp<U extends { type: string }, T extends U['type']> = (
+	U extends infer Temp extends { type: string }
+		? {
+				[Key in U['type'] extends T ? 'temporaryKey' : never]: Temp
+			}
+		: never
+) extends infer Shape
+	? Shape extends { temporaryKey: unknown }
+		? ['temporaryKey'] extends never
+			? never
+			: Shape['temporaryKey']
+		: never
+	: never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

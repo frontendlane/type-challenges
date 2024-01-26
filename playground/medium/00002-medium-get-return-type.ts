@@ -25,7 +25,10 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyReturnType<T> = any
+/* eslint-disable-next-line ts/no-explicit-any */
+type MyReturnType<T extends (...args: Array<any>) => any> = T extends (...args: Array<any>) => infer ReturnValue
+	? ReturnValue
+	: never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
@@ -47,6 +50,7 @@ type ComplexObject = {
 }
 
 const fn = (v: boolean) => (v ? 1 : 2)
+/* eslint-disable-next-line ts/no-explicit-any */
 const fn1 = (v: boolean, w: any) => (v ? 1 : 2)
 
 /* _____________ Further Steps _____________ */
