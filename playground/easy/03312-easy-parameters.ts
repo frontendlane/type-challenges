@@ -20,7 +20,8 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyParameters<T extends (...args: any[]) => any> = any
+/* eslint-disable-next-line ts/no-explicit-any */
+type MyParameters<T extends (...args: Array<any>) => any> = T extends (...args: infer TT) => any ? TT : never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

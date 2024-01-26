@@ -22,7 +22,11 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyAwaited<T> = any
+/* eslint-disable-next-line ts/no-explicit-any */
+type MyAwaited<T extends PromiseLike<any>> =
+	Parameters<NonNullable<Parameters<T['then']>[0]>>[0] extends PromiseLike<unknown>
+		? MyAwaited<Parameters<NonNullable<Parameters<T['then']>[0]>>[0]>
+		: Parameters<NonNullable<Parameters<T['then']>[0]>>[0]
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
@@ -31,6 +35,7 @@ type X = Promise<string>
 type Y = Promise<{ field: number }>
 type Z = Promise<Promise<string | number>>
 type Z1 = Promise<Promise<Promise<string | boolean>>>
+/* eslint-disable-next-line ts/no-explicit-any */
 type T = { then: (onfulfilled: (arg: number) => any) => any }
 
 type cases = [
