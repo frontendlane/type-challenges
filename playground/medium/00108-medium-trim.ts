@@ -18,7 +18,19 @@
 
 /* _____________ Your Code Here _____________ */
 
-type Trim<S extends string> = any
+type TrimmableCharacter = " " | "\n" | "\t"
+
+type Trim<S extends string> = S extends `${infer First}${infer Rest}`
+	? First extends TrimmableCharacter
+		? Rest extends TrimmableCharacter
+			? ""
+			: Trim<Rest>
+		: Rest extends TrimmableCharacter
+			? First
+			: Rest extends `${string} `
+				? `${First}${Trim<Rest>}`
+				: S
+	: ""
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'

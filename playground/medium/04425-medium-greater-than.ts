@@ -25,7 +25,19 @@
 
 /* _____________ Your Code Here _____________ */
 
-type GreaterThan<T extends number, U extends number> = any
+type Fill<Content, Size extends number, Container extends Array<Content> = []> = Container['length'] extends Size
+	? Container
+	: Fill<Content, Size, [...Container, Content]>
+
+type Decrement<N extends number> = Fill<'', N, []> extends [unknown, ...infer Rest] ? Rest['length'] : never
+
+type GreaterThan<Left extends number, Right extends number> = Left extends 0
+	? false
+	: Left extends Right
+		? false
+		: GreaterThan<Decrement<Left>, Right> extends false
+			? true
+			: false
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
