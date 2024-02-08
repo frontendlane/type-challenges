@@ -12,7 +12,31 @@
 
 /* _____________ Your Code Here _____________ */
 
-type IsOdd<T extends number> = any
+type IsOddDigit<D extends string> = D extends '0'
+	? false
+	: D extends '1'
+		? true
+		: D extends '2'
+			? false
+			: D extends '3'
+				? true
+				: D extends '4'
+					? false
+					: D extends '5'
+						? true
+						: D extends '6'
+							? false
+							: D extends '7'
+								? true
+								: D extends '8'
+									? false
+									: D extends '9'
+										? true
+										: false
+
+type LastCharacter<S extends string> = S extends `${string}${infer Rest}` ? (Rest extends '' ? S : LastCharacter<Rest>) : S
+
+type IsOdd<T extends number> = `${T}` extends `${infer StringT}` ? IsOddDigit<LastCharacter<StringT>> : false
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
